@@ -49,28 +49,12 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Compra el OsmyPass y disfruta',
-    title: 'Obtener Cuenta Exclusiva',
-    start: 'Por',
-    end: '4,99€',
-    link: 'https://whop.com/osmyreal/',
+    company: '¿Ya tienes el VPN activado?',
+    title: 'Acceder Ahora',
+    start: 'Solo',
+    end: 'EEUU',
+    link: 'https://www.osmyreal.com',
     id: 'work1',
-  },
-  {
-    company: '¡Nuevas cuentas disponibles!',
-    title: 'Recibe Avisos en Telegram',
-    start: 'Por',
-    end: '0,00€',
-    link: 'https://t.me/OsmyReal',
-    id: 'work2',
-  },
-  {
-    company: '¡Únete y participa! ',
-    title: 'Comunidad en Discord',
-    start: 'Por',
-    end: '0,00€',
-    link: 'https://ibelick.com',
-    id: 'work3',
   },
 ]
 
@@ -103,10 +87,10 @@ export const BLOG_POSTS: BlogPost[] = [
     uid: 'blog-4',
   },
     {
-    title: 'Descubre los Juegos de Mesa Tradicionales',
+    title: 'What I learned from my first year of freelancing',
     description:
       '¡Nuevas sorpresas te esperan!',
-    link: '/blog/juegos-de-mesa-tradicionales',
+    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
     uid: 'blog-5',
   },
 ]

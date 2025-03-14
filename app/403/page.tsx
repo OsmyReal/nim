@@ -19,6 +19,8 @@ import {
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
+import AdBanner from '../../components/AdBanner' // Importa el componente del anuncio
+import AdSense from '../../components/AdSense'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -137,51 +139,34 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Un blog dedicado a los videojuegos para iOS, donde la diversión y los regalos ocultos se encuentran en cada rincón. ¡Descubre sorpresas y novedades mientras exploras lo mejor del gaming móvil!
+            Este sitio está disponible solo para usuarios en los Estados Unidos. Por favor, activa un VPN con servidor en EE. UU. y luego haz clic en el siguiente botón para acceder.
           </p>
         </div>
       </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Seleccionar Tutorial</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
-              </div>
-              <div className="px-1">
-                <a
-                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                  href={project.link}
-                  target="_blank"
-                >
-                  {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
-                  {project.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.section>
+      {/* Aquí agregamos el anuncio de AdSense */}
+      <AdSense pId="8851903508857633" />
+
+      {/* Anuncio en la parte superior */}
+      <div className="w-full mt-6">
+        <AdBanner
+          dataAdFormat="auto"
+          dataFullWidthResponsive={true}
+          dataAdSlot="1450772916"
+        />
+      </div>
 
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Otros Recursos</h3>
+        <h3 className="mb-5 text-lg font-medium">Acción Requerida</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
             <a
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
               href={job.link}
-              target="_blank"
+              target="_self"
               rel="noopener noreferrer"
               key={job.id}
             >
@@ -206,42 +191,6 @@ export default function Personal() {
               </div>
             </a>
           ))}
-        </div>
-      </motion.section>
-
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-3 text-lg font-medium">Publicaciones</h3>
-        <div className="flex flex-col space-y-0">
-          <AnimatedBackground
-            enableHover
-            className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
-            transition={{
-              type: 'spring',
-              bounce: 0,
-              duration: 0.2,
-            }}
-          >
-            {BLOG_POSTS.map((post) => (
-              <Link
-                key={post.uid}
-                className="-mx-3 rounded-xl px-3 py-3"
-                href={post.link}
-                data-id={post.uid}
-              >
-                <div className="flex flex-col space-y-1">
-                  <h4 className="font-normal dark:text-zinc-100">
-                    {post.title}
-                  </h4>
-                  <p className="text-zinc-500 dark:text-zinc-400">
-                    {post.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </AnimatedBackground>
         </div>
       </motion.section>
 
